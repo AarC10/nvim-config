@@ -58,11 +58,9 @@ return packer.startup(function(use)
     use {"folke/which-key.nvim"}
     use { "xiyaowong/nvim-transparent"}
     use { "petertriho/nvim-scrollbar"}
-    use { 'karb94/neoscroll.nvim' }
 
     -- Make Low Level Easier
     use { "sakhnik/nvim-gdb"}
-    use { 'Civitasv/cmake-tools.nvim'}
 
     -- Colorschemes
     use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
@@ -95,19 +93,21 @@ return packer.startup(function(use)
     use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
     
     -- CoC 
-    use { "neoclide/coc.nvim" }
-
+    use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- Telescope
-	use { "nvim-telescope/telescope.nvim", commit = "76ea9a898d3307244dce3573392dcf2cc38f340f" }
+	use {
+         'nvim-telescope/telescope.nvim', tag = '0.1.4',
+          requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
 	-- Treesitter
-	use {
-		"nvim-treesitter/nvim-treesitter",
-		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
-	}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
 
-	-- Git
+    -- Git
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
 
     -- Neoscroller
