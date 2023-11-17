@@ -59,6 +59,7 @@ return packer.startup(function(use)
     use { "xiyaowong/nvim-transparent"}
     use { "petertriho/nvim-scrollbar"}
     use { 'karb94/neoscroll.nvim' }
+    -- use { 'glepnir/dashboard-nvim' }
 
     -- Make Low Level Easier
     use { "sakhnik/nvim-gdb"}
