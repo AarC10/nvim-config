@@ -58,20 +58,17 @@ return packer.startup(function(use)
     use {"folke/which-key.nvim"}
     use { "xiyaowong/nvim-transparent"}
     use { "petertriho/nvim-scrollbar"}
+    use { 'karb94/neoscroll.nvim' }
 
     -- Make Low Level Easier
-    use { "sakhnik/nvim-gdb"}
+    -- use { "sakhnik/nvim-gdb"}
+    use { 'Civitasv/cmake-tools.nvim'}
 
     -- Colorschemes
     use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
     use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
     use { 'navarasu/onedark.nvim' }
     use { 'mhartington/oceanic-next'}
-    use { 'titanzero/zephyrium' }
-    use { 'EdenEast/nightfox.nvim' }
-    use { 'catppuccin/nvim' }
-    use { 'glepnir/zephyr-nvim' }
-
 
 	-- Cmp 
     use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
@@ -91,27 +88,19 @@ return packer.startup(function(use)
     use { "williamboman/mason-lspconfig.nvim", commit = "0051870dd728f4988110a1b2d47f4a4510213e31" }
 	use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
     use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
-    
-    -- CoC 
-    use {'neoclide/coc.nvim', branch = 'release'}
 
 	-- Telescope
-	use {
-         'nvim-telescope/telescope.nvim', tag = '0.1.4',
-          requires = { {'nvim-lua/plenary.nvim'} }
-    }
+	use { "nvim-telescope/telescope.nvim", commit = "0.1.4" }
 
 	-- Treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+	use {
+		"nvim-treesitter/nvim-treesitter",
+		commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+	}
 
-    -- Git
+	-- Git
 	use { "lewis6991/gitsigns.nvim", commit = "2c6f96dda47e55fa07052ce2e2141e8367cbaaf2" }
 
-    -- Neoscroller
-    use { "karb94/neoscroll.nvim" }
 
     -- Autosave
     use({
@@ -124,35 +113,11 @@ return packer.startup(function(use)
 	    end,
     })
   -- Discord
-  --  use 'andweeb/presence.nvim'
-
-
-  -- Java
-    use { "mfussenegger/nvim-jdtls" }
+  -- use 'andweeb/presence.nvim'
 
 
   -- Copilot
-    -- use 'github/copilot.vim'
-    use {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                autorefresh = { enabled = true },
-                suggestion = { enabled = false },
-                panel = { enabled = false },
-            })
-        end,
-    }
-
-    use {
-        "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua" },
-        config = function ()
-            require("copilot_cmp").setup()
-        end
-    }
+    use 'github/copilot.vim'
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

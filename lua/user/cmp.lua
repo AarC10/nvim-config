@@ -42,7 +42,6 @@ local kind_icons = {
   Event = "",
   Operator = "",
   TypeParameter = "",
-  Copilot = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -111,7 +110,6 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = "copilot" },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
@@ -122,13 +120,8 @@ cmp.setup {
     select = false,
   },
   window = {
-    completion = {
-        border = 'rounded',
-        scrollbar = '║',
-    },
-
     documentation = {
-       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
     },
   },
   experimental = {

@@ -35,4 +35,4 @@ require('neoscroll').setup({
 })
 
 require("scrollbar").setup()
-vim.cmd [[colorscheme zephyrium]]
+
