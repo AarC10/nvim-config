@@ -13,6 +13,27 @@ return {
     end,
   },
 
+  -- File explorer
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      filters = {
+        dotfiles = false,
+      },
+    },
+  },
+
+  -- Terminal
+  {
+    "akinsho/toggleterm.nvim",
+    event = "VeryLazy",
+    opts = {
+      open_mapping = [[<c-\>]],
+      direction = "float",
+      shade_terminals = true,
+    },
+  },
+
   -- {
   -- 	"nvim-treesitter/nvim-treesitter",
   -- 	opts = {
