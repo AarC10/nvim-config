@@ -48,7 +48,7 @@ packer.startup(function(use)
 
   -- UI
   use "nvim-tree/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use "nvim-tree/nvim-tree.lua"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/bufferline.nvim"
   use "goolord/alpha-nvim"
@@ -64,7 +64,7 @@ packer.startup(function(use)
   use "moll/vim-bbye"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
+  -- impatient.nvim removed as it's no longer needed for Neovim 0.9+
   use {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -114,7 +114,7 @@ packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    build = ":TSUpdate",
   }
 
   -- Telescope
@@ -137,14 +137,4 @@ packer.startup(function(use)
   end
 end)
 
--- LSP Setup (lua_ls replacement for sumneko)
-local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup({
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { "vim" },
-      },
-    },
-  },
-})
+-- LSP is configured through user.lsp module
